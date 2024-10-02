@@ -1,0 +1,134 @@
+.register-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/external/cao1-1500w.jpg");
+  background-position: left;
+}
+.register-form {
+  top: 0px;
+  left: -4px;
+  width: 649px;
+  bottom: 0px;
+  height: 1186px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-self: center;
+  align-items: center;
+  border-color: #000000;
+  border-width: 1px;
+  border-radius: Radius30;
+  flex-direction: row;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgb(189, 195, 199) 0.00%,rgb(109, 255, 242) 77.00%);
+  border-top-right-radius: var(--dl-radius-radius-round);
+  border-bottom-right-radius: var(--dl-radius-radius-round);
+}
+.register-container1 {
+  flex: 0 0 auto;
+  width: 244px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.register-text {
+  border-radius: var(--dl-radius-radius-radius4);
+  margin-bottom: 50px;
+}
+.register-container2 {
+  flex: 0 0 auto;
+  width: 244px;
+  height: 536px;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--dl-space-space-unit);
+  flex-direction: column;
+}
+
+
+
+
+.register-textinput2 {
+  width: 300px; /* Adjust width as desired */
+  height: 50px; /* Adjust height as desired */
+  align-self: center;
+  margin-top: 100px;
+  margin-bottom: -100px;
+  transition: 0.3s;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+.register-textinput3 {
+  width: 300px; /* Adjust width as desired */
+  height: 50px; /* Adjust height as desired */
+  align-self: center;
+  margin-top: 0;
+  transition: 0.3s;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+
+
+.register-navlink {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  position: absolute;
+  align-self: center;
+  margin-top: auto;
+  margin-left: 220px; /* Adjust margin-left to increase spacing */
+  margin-right: 220px; /* Adjust margin-right to increase spacing */
+  margin-bottom: 500px;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-align: center; /* Center the text horizontally */
+}
+
+
+.register-container3 {
+  width: 831px;
+  height: 1003px;
+  display: flex;
+  align-self: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.register-image {
+  width: 338px;
+  height: 337px;
+  align-self: flex-end;
+  margin-top: 155px;
+  object-fit: cover;
+  margin-right: 125px;
+  border-radius: var(--dl-radius-radius-radius4);
+}
+.register-text1 {
+  color: #000000;
+  width: 500px;
+  height: var(--dl-size-size-xlarge);
+  font-size: 35px;
+  align-self: flex-end;
+  font-style: normal;
+  margin-top: 100px;
+  text-align: center;
+  font-family: "Source Sans 3";
+  font-weight: 400;
+  margin-right: 50px;
+}
+@media(max-width: 1200px) {
+  .register-navlink {
+    text-transform: capitalize;
+    text-decoration: none;
+  }
+}

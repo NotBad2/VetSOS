@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Comparison Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='compare.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Comparison Tool</h1>
+        <form id="uploadForm" method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Compare</button>
+        </form>
+        <div class="images" id="result"></div>
+        <div class="analysis" id="analysis"></div>
+    </div>
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            try {
+                const response = await fetch('/compare', {
+                    method: 'POST',
+                    body: formData
+                });
+    
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+    
+                const result = await response.json();
+    
+                if (Array.isArray(result) && result.length > 0) {
+                    // Sort the result array by similarity score in descending order
+                    result.sort((a, b) => b.similarity_score - a.similarity_score);
+    
+                    // Clear previous results
+                    document.getElementById('result').innerHTML = '';
+    
+                    // Iterate over each item in the sorted result array
+                    result.forEach(item => {
+                        const { image_path, similarity_score } = item;
+    
+                        // Display images with similarity score higher than 75
+                        if (similarity_score > 75) {
+                            // Construct the image source URL with the correct path
+                            const imageSrc = `${image_path}`;
+    
+                            // Create HTML elements for the image and score
+                            const imageElement = document.createElement('img');
+                            imageElement.src = imageSrc;
+                            imageElement.alt = 'Image';
+                            const scoreElement = document.createElement('p');
+    
+                            // Append the image and score to the result container
+                            const container = document.getElementById('result');
+                            const divElement = document.createElement('div');
+                            divElement.appendChild(imageElement);
+                            divElement.appendChild(scoreElement);
+                            container.appendChild(divElement);
+                        }
+                    });
+                } else {
+                    throw new Error('Invalid response from server');
+                }
+    
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('analysis').innerHTML = `
+                    <h2>Error:</h2>
+                    <pre>${error.message}</pre>
+                `;
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+.app-component-container {
+  width: 69.99374389648438px;
+  height: 74.99999237060547px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.app-component-image {
+  top: 0px;
+  left: 10.003124237060547px;
+  width: 49px;
+  height: 68px;
+  position: absolute;
+  object-fit: cover;
+}
+.app-component-view {
+  top: 6px;
+  left: 0px;
+  width: 70px;
+  height: 69px;
+  position: absolute;
+}
+.app-component-root-class-name {
+  top: -20px;
+  right: -16px;
+  position: absolute;
+}
+@media(max-width: 1200px) {
+  .app-component-container {
+    height: 82px;
+  }
+  .app-component-root-class-name {
+    right: -87px;
+    bottom: -75px;
+  }
+}

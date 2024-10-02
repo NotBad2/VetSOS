@@ -1,0 +1,22 @@
+.component1-container {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.component1-image {
+  width: 73px;
+  height: 67px;
+  object-fit: cover;
+}
+.component1-text {
+  color: var(--dl-color-scheme-green100);
+  font-size: 23px;
+  align-self: flex-start;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3;
+  padding-left: var(--dl-space-space-unit);
+  text-transform: capitalize;
+}

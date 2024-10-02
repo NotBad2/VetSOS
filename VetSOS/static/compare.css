@@ -1,0 +1,28 @@
+body { 
+    font-family: Arial, sans-serif; 
+}
+.container { 
+    text-align: center; 
+    margin-top: 50px; 
+}
+.images, .analysis { 
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+}
+.images img { 
+    max-width: 300px; 
+    border: 1px solid #ccc; 
+}
+.analysis pre {
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 80%;
+    max-width: 600px;
+}
